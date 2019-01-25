@@ -34,7 +34,7 @@
                 <configuration>
                     <instructions>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-                        <Export-Package>data.model,org.example.customers</Export-Package> 
+                        <Export-Package>data.model,org.example.customers</Export-Package>
                     </instructions>
                 </configuration>
             </plugin>
@@ -47,7 +47,7 @@
                         <id>generate-sources</id>
                         <phase>generate-sources</phase>
                         <configuration>
-                            <sourceRoot>${basedir}/target/generated/src/main/java</sourceRoot>
+<!--                            <sourceRoot>${basedir}/target/generated/src/main/java</sourceRoot>-->
                             <wsdlOptions>
                                 <wsdlOption>
                                     <wsdl>${basedir}/src/main/resources/data/model/CustomerService.wsdl</wsdl>

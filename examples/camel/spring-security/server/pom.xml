@@ -38,11 +38,16 @@
         <dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-spring</artifactId>
-            <version>${camel.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-spring-security</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>spring-aop</artifactId>
+                    <groupId>org.springframework</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.springframework.security</groupId>
@@ -105,8 +110,7 @@
                         <Require-Bundle>
                             org.apache.camel.camel-cxf,
                             org.apache.camel.camel-cxf-transport,
-                            org.apache.cxf.bundle,
-                            org.springframework.beans,
+                            org.apache.cxf.cxf-core,
                             org.apache.camel.camel-cxf,
                             org.springframework.security.core,
                             org.springframework.security.web,

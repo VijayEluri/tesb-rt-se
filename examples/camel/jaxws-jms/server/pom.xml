@@ -23,6 +23,14 @@
             <artifactId>cxf-rt-frontend-jaxws</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-transports-http</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-transports-jms</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-core</artifactId>
         </dependency>
@@ -35,9 +43,12 @@
             <artifactId>camel-cxf</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-spring</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.apache.activemq</groupId>
-            <artifactId>activemq-osgi</artifactId>
-            <scope>runtime</scope>
+            <artifactId>activemq-spring</artifactId>
         </dependency>
 
         <!-- logging -->
@@ -72,8 +83,8 @@
                 <configuration>
                     <instructions>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-                        <Import-Package>*,org.apache.camel.osgi</Import-Package>
-                        <Require-Bundle>org.apache.camel.camel-cxf,org.apache.camel.camel-cxf-transport,org.apache.cxf.bundle,org.springframework.beans,org.apache.activemq.activemq-osgi,org.apache.camel.camel-cxf</Require-Bundle>
+                        <Import-Package>*</Import-Package>
+                        <Require-Bundle>org.apache.camel.camel-cxf,org.apache.cxf.cxf-core,org.apache.servicemix.bundles.spring-beans,org.apache.activemq.activemq-osgi</Require-Bundle>
                     </instructions>
                 </configuration>
             </plugin>

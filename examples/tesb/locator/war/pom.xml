@@ -66,11 +66,11 @@
         <finalName>services</finalName>
 	    <plugins>
 		    <plugin>
-		        <groupId>org.mortbay.jetty</groupId>
+		        <groupId>org.eclipse.jetty</groupId>
 		        <artifactId>jetty-maven-plugin</artifactId>
 
 		        <configuration>
-		            <connectors>
+		            <httpConnector>
 		                <connector
 		                    implementation="org.eclipse.jetty.server.ssl.SslSelectChannelConnector">
 		                    <port>9080</port>
@@ -82,11 +82,11 @@
 		                <connector
 		                    implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
 		                    <port>8080</port>
-		                    <maxIdleTime>60000</maxIdleTime>
+		                    <idleTimeout>60000</idleTimeout>
 		                </connector>
-		            </connectors>
-		        </configuration>		        
-		        
+		            </httpConnector>
+		        </configuration>
+
 		    </plugin>
 	    </plugins>
 	</build>

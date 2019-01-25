@@ -35,11 +35,15 @@
            <version>1.3.1</version>
         </dependency>
         <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+        </dependency>
+        <dependency>
 	       <groupId>org.hsqldb</groupId>
 	       <artifactId>hsqldb</artifactId>
 	       <version>${hsqldb.version}</version>
     	</dependency>
-        
+
     </dependencies>
 
     <build>
@@ -50,7 +54,7 @@
                 <configuration>
                     <instructions>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-                        <Require-Bundle>org.apache.cxf.bundle,org.hsqldb.hsqldb,org.apache.geronimo.specs.geronimo-jpa_2.0_spec,org.apache.openjpa,org.springframework.beans,jaxrs-advanced-common</Require-Bundle>
+                        <Require-Bundle>org.apache.cxf.cxf-core,org.hsqldb.hsqldb,org.apache.geronimo.specs.geronimo-jpa_2.0_spec,org.apache.openjpa,org.apache.servicemix.bundles.spring-beans,jaxrs-advanced-common</Require-Bundle>
                         <Export-Package>
                    service
                         </Export-Package>
@@ -59,7 +63,7 @@
             </plugin>
         </plugins>
     </build>
- 
+
 
     <profiles>
         <profile>
@@ -92,7 +96,7 @@
             </build>
         </profile>
     </profiles>
-   
+
 
 </project>
 

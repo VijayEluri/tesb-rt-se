@@ -2,7 +2,7 @@
     Copyright (C) 2010 Talend Inc. - www.talend.com
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
@@ -20,7 +20,7 @@
     </parent>
 
     <properties>
-      <cxf.version>3.2.6</cxf.version>
+        <cxf.version>3.2.6</cxf.version>
     </properties>
 
     <dependencies>
@@ -35,6 +35,16 @@
             <version>${cxf.version}</version>
         </dependency>
     </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-orm</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <modules>
         <module>common</module>

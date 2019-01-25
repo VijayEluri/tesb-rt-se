@@ -49,7 +49,7 @@
                 <configuration>
                     <instructions>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-                        <Import-Package>data.model, *</Import-Package>
+                        <Import-Package>data.model,*</Import-Package>
                     </instructions>
                 </configuration>
             </plugin>

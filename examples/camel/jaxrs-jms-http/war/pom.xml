@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <!--
         Copyright (C) 2010 Talend Inc. - www.talend.com
@@ -22,6 +23,33 @@
             <groupId>org.talend.camel-examples.jaxrs-jms-http</groupId>
             <artifactId>jaxrs-jms-http-server</artifactId>
             <version>${project.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>jetty-util</artifactId>
+                    <groupId>org.eclipse.jetty</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.talend.camel-examples.jaxrs-jms-http</groupId>
+            <artifactId>jaxrs-jms-http-common</artifactId>
+            <version>${project.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-frontend-jaxrs</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-spring</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-spring</artifactId>
+            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
@@ -35,7 +63,7 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
         </dependency>
-	
+
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
@@ -44,22 +72,32 @@
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.geronimo.specs</groupId>
+            <artifactId>geronimo-jms_2.0_spec</artifactId>
+            <version>1.0-alpha-2</version>
+            <scope>provided</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
         <plugins>
             <plugin>
-                <groupId>org.mortbay.jetty</groupId>
+                <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
-                <version>${jetty.version}</version>
                 <configuration>
-                    <connectors>
-                        <connector
-                                implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
-                            <port>9090</port>
-                            <maxIdleTime>60000</maxIdleTime>
-                        </connector>
-                    </connectors>
+                    <httpConnector>
+                        <port>9090</port>
+                        <idleTimeout>60000</idleTimeout>
+                    </httpConnector>
                 </configuration>
             </plugin>
         </plugins>

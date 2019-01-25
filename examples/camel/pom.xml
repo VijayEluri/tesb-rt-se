@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <!--
         Copyright (C) 2010 Talend Inc. - www.talend.com
@@ -22,7 +23,6 @@
     <properties>
         <spring.version>4.3.18.RELEASE</spring.version>
         <spring.security.version>4.2.4.RELEASE</spring.security.version>
-        <jetty.version>9.3.24.v20180605</jetty.version>
         <jsr311.api.version>1.1.1</jsr311.api.version>
         <jsr250.api.version>1.0</jsr250.api.version>
         <felix.version>1.2.0</felix.version>

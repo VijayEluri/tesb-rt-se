@@ -8,7 +8,7 @@
              http://cxf.apache.org/blueprint/jaxrs http://cxf.apache.org/schemas/blueprint/jaxrs.xsd
              ">
      <jaxrs:server id="jaxrs"
-                   address="/jaxrs" 
+                   address="/jaxrs"
                    modelRef="classpath:/data/model/CustomerService-jaxrs.xml">
        <jaxrs:serviceBeans>
          <ref component-id="customerbean"/>
@@ -16,7 +16,7 @@
        <jaxrs:providers>
          <ref component-id="jaxbprovider"/>
          <bean class="service.description.NoCustomerExceptionMapper"/>
-       </jaxrs:providers>		   
+       </jaxrs:providers>
      </jaxrs:server>
 
      <bean id="jaxbprovider" class="org.apache.cxf.jaxrs.provider.JAXBElementProvider">
@@ -24,7 +24,7 @@
         <property name="marshallAsJaxbElement" value="true"/>
      </bean>
 
-     <jaxws:endpoint id="jaxws" implementor="#customerbean" address="/jaxws"/>      
+     <jaxws:endpoint id="jaxws" implementor="#customerbean" address="/jaxws"/>
 
      <bean id="customerbean" class="service.description.CustomerServiceImpl"/>
 </blueprint>

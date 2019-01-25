@@ -27,6 +27,20 @@
             <groupId>org.talend.camel-examples.spring-security</groupId>
             <artifactId>spring-security-server</artifactId>
             <version>${project.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>asm</artifactId>
+                    <groupId>asm</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>spring-aop</artifactId>
+                    <groupId>org.springframework</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>aopalliance</artifactId>
+                    <groupId>aopalliance</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
@@ -38,9 +52,9 @@
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
+            <artifactId>spring-aop</artifactId>
         </dependency>
-        
+
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
@@ -56,20 +70,16 @@
     	<finalName>spring-security</finalName>
         <plugins>
             <plugin>
-                <groupId>org.mortbay.jetty</groupId>
+                <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
-                <version>${jetty.version}</version>
                 <configuration>
 		<webAppConfig>
 			<contextPath>/spring-security</contextPath>
 		</webAppConfig>
-                    <connectors>
-                        <connector
-                                implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
+                    <httpConnector>
                             <port>8080</port>
-                            <maxIdleTime>60000</maxIdleTime>
-                        </connector>
-                    </connectors>
+                            <idleTimeout>60000</idleTimeout>
+                    </httpConnector>
                 </configuration>
             </plugin>
         </plugins>

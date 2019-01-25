@@ -41,7 +41,6 @@ The sample requires a JMS broker to be running:
 > mvn -Pjms.broker
 
   That will create a new broker (using the default configuration) and will start it.
-Alternatively, you can start a broker from within the TESB OSGi container, see below for the instructions.
 
 3) Starting the Service
 -------------------------------------------------------------------------------
@@ -53,10 +52,6 @@ Alternatively, you can start a broker from within the TESB OSGi container, see b
 
 Make sure you've first installed the examples features repository
 as described in the parent README.
-
-Start the broker if not already started:
-karaf@trun> feature:install activemq-spring
-karaf@trun> activemq:create-broker
 
 Install and start demo bundles:
 karaf@trun> feature:install talend-camel-example-jaxrs-jms-http

@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <!--
         Copyright (C) 2010 Talend Inc. - www.talend.com
     -->
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>osgi</artifactId>
-    <packaging>pom</packaging>
-    <name>Talend Camel Examples :: features</name>
 
     <parent>
         <groupId>org.talend.camel-examples</groupId>
@@ -16,6 +14,10 @@
         <version>1.0</version>
         <relativePath>..</relativePath>
     </parent>
+
+    <artifactId>osgi</artifactId>
+    <packaging>pom</packaging>
+    <name>Talend Camel Examples :: features</name>
 
     <properties>
         <features.file>features.xml</features.file>

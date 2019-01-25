@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <!--
         Copyright (C) 2010 Talend Inc. - www.talend.com
@@ -42,11 +43,23 @@
                 <groupId>org.apache.camel</groupId>
                 <artifactId>camel-spring</artifactId>
                 <version>${camel.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>spring-aop</artifactId>
+                        <groupId>org.springframework</groupId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.apache.camel</groupId>
                 <artifactId>camel-spring-security</artifactId>
                 <version>${camel.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>spring-aop</artifactId>
+                        <groupId>org.springframework</groupId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.apache.camel</groupId>
@@ -126,7 +139,7 @@
             </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>
-                <artifactId>spring-web</artifactId>
+                <artifactId>spring-aop</artifactId>
                 <version>${spring.version}</version>
             </dependency>
             <dependency>
@@ -207,7 +220,7 @@
                     <artifactId>exec-maven-plugin</artifactId>
                     <version>1.2</version>
                     <configuration>
-                      <commandlineArgs>http.port ${http.port}</commandlineArgs>
+                        <commandlineArgs>http.port ${http.port}</commandlineArgs>
                     </configuration>
                 </plugin>
             </plugins>

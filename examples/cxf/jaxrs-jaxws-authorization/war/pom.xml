@@ -2,8 +2,8 @@
     Copyright (C) 2010 Talend Inc. - www.talend.com
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.talend.cxf-examples.jaxrs-jaxws-authorization</groupId>
@@ -47,17 +47,18 @@
         <finalName>services</finalName>
         <plugins>
             <plugin>
-                <groupId>org.mortbay.jetty</groupId>
-                <artifactId>maven-jetty-plugin</artifactId>
-                <version>6.1.15</version>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
                 <configuration>
-                    <contextPath>/${project.build.finalName}</contextPath>
-                    <userRealms>
-                        <userRealm implementation="org.mortbay.jetty.security.HashUserRealm">
+                    <webApp>
+                        <contextPath>/${project.build.finalName}</contextPath>
+                    </webApp>
+                    <loginServices>
+                        <loginService implementation="org.eclipse.jetty.security.HashLoginService">
                             <name>HelloServiceRealm</name>
                             <config>src/main/resources/jetty-realm.properties</config>
-                        </userRealm>
-                    </userRealms>
+                        </loginService>
+                    </loginServices>
                 </configuration>
             </plugin>
         </plugins>

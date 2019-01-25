@@ -74,16 +74,13 @@
                 </executions>
             </plugin>
             <plugin>
-                <groupId>org.mortbay.jetty</groupId>
+                <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
                 <configuration>
-                    <connectors>
-                        <connector
-                            implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
+                    <httpConnector>
                             <port>9090</port>
-                            <maxIdleTime>60000</maxIdleTime>
-                        </connector>
-                    </connectors>
+                            <idleTimeout>60000</idleTimeout>
+                    </httpConnector>
                 </configuration>
             </plugin>
 			<plugin>

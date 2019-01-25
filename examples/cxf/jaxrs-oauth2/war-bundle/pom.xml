@@ -37,8 +37,8 @@
                     <instructions>
                         <Web-ContextPath>/examples</Web-ContextPath>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-                        <Require-Bundle>org.apache.cxf.bundle,org.springframework.beans,jaxrs-oauth2-common, jaxrs-oauth2-service</Require-Bundle>
-                        <DynamicImport-Package>*</DynamicImport-Package> 
+                        <Require-Bundle>org.apache.cxf.cxf-core,jaxrs-oauth2-common, jaxrs-oauth2-service</Require-Bundle>
+                        <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
                 </configuration>
             </plugin>

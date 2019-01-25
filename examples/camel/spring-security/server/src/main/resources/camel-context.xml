@@ -73,11 +73,11 @@
 
     <bean id="accessDecisionManager" class="org.springframework.security.access.vote.AffirmativeBased">
         <property name="allowIfAllAbstainDecisions" value="true"/>
-        <property name="decisionVoters">
+        <constructor-arg name="decisionVoters">
             <list>
                 <bean class="org.springframework.security.access.vote.RoleVoter"/>
             </list>
-        </property>
+        </constructor-arg>
     </bean>
 
     <!-- Camel routes from addresses on the servlet to rest and jaxws servers -->

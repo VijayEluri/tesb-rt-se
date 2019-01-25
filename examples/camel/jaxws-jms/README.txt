@@ -14,10 +14,10 @@ Example for publishing CXF services using Camel JMS
 
 This example shows how to publish and call a CXF service using SOAP/JMS. While this can also be done
 using pure CXF the example shows how to do this using Camel as a CXF transport with a Camel
-route defining the transport. 
+route defining the transport.
 
-The advantage of this method over a pure CXF approach is that you can easily do Camel transformations 
-and routings using Camel routes. Camel also offers other CXF integrations. The Camel transport for 
+The advantage of this method over a pure CXF approach is that you can easily do Camel transformations
+and routings using Camel routes. Camel also offers other CXF integrations. The Camel transport for
 CXF was chosen here as it offers the easiest integration for an existing CXF endpoint as you only need
 to switch the transport and can leave the rest of the CXF configuration as-is.
 
@@ -33,7 +33,7 @@ Note: Please follow the parent README.txt first for common build and container s
 
 1) Building the Demo
 -------------------------------------------------------------------------------
-  
+
 Using either UNIX or Windows, from the command line, run:
 > mvn install
 
@@ -48,7 +48,7 @@ The sample requires a JMS broker to be running:
 
   That will create a new broker (using the default configuration) and will start it.
 
-Alternatively, you can start a broker from within the TESB OSGi container, see below for the instructions.
+Alternatively, you can start the standalone ActiveMQ broker, see below for the instructions.
 
 3) Starting the Service
 -------------------------------------------------------------------------------
@@ -63,13 +63,8 @@ Alternatively, you can start a broker from within the TESB OSGi container, see b
 
 3.3) From within the TESB OSGi container command line, run:
 
-Start the broker if not already started:
-
-karaf@trun> feature:install activemq-spring
-karaf@trun> activemq:create-broker
-
 Install and start the demo server bundle:
-karaf@trun> feature:install talend-camel-example-jaxws-jms 
+karaf@trun> feature:install talend-camel-example-jaxws-jms
 
 (Make sure you've first installed the examples features repository as described in the
 parent README.)
