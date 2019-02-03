@@ -50,10 +50,6 @@
         </dependency>
         <dependency>
             <groupId>org.apache.camel</groupId>
-            <artifactId>camel-spring</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.camel</groupId>
             <artifactId>camel-jms</artifactId>
         </dependency>
         <dependency>
@@ -70,7 +66,7 @@
         </dependency>
         <dependency>
             <groupId>org.apache.activemq</groupId>
-            <artifactId>activemq-spring</artifactId>
+            <artifactId>activemq-osgi</artifactId>
         </dependency>
         <!--<dependency>-->
         <!--<groupId>org.apache.activemq</groupId>-->
@@ -119,7 +115,7 @@
                 <configuration>
                     <instructions>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-                        <Require-Bundle>org.apache.camel.camel-cxf,org.apache.camel.camel-cxf-transport,org.apache.cxf.cxf-core,org.apache.servicemix.bundles.spring-beans,org.apache.activemq.activemq-osgi,org.apache.camel.camel-jms</Require-Bundle>
+                        <Require-Bundle>org.apache.camel.camel-cxf,org.apache.camel.camel-cxf-transport,org.apache.cxf.cxf-core,org.apache.activemq.activemq-osgi,org.apache.camel.camel-jms</Require-Bundle>
                     </instructions>
                 </configuration>
             </plugin>

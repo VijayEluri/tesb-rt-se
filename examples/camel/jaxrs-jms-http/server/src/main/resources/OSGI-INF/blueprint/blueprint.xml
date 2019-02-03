@@ -1,27 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright (C) 2010 Talend Inc. - www.talend.com -->
-<beans xmlns="http://www.springframework.org/schema/beans"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:jaxrs="http://cxf.apache.org/jaxrs"
-    xmlns:context="http://www.springframework.org/schema/context"
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:jaxrs="http://cxf.apache.org/blueprint/jaxrs"
     xsi:schemaLocation="
-        http://www.springframework.org/schema/beans
-            http://www.springframework.org/schema/beans/spring-beans.xsd
-        http://www.springframework.org/schema/context
-            http://www.springframework.org/schema/context/spring-context.xsd
-        http://cxf.apache.org/transports/jms
-            http://cxf.apache.org/schemas/configuration/jms.xsd
-        http://cxf.apache.org/jaxrs
-            http://cxf.apache.org/schemas/jaxrs.xsd
-        http://camel.apache.org/schema/spring
-            http://camel.apache.org/schema/spring/camel-spring.xsd">
+       http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
+       http://cxf.apache.org/blueprint/jaxrs http://cxf.apache.org/schemas/blueprint/jaxrs.xsd">
 
-    <import resource="classpath*:META-INF/cxf/cxf.xml" />
-    <import resource="classpath*:META-INF/cxf/camel/cxf-extension-camel.xml" />
 
     <jaxrs:server address="camel://direct:bookStore" id="http-server">
         <jaxrs:serviceBeans>
-            <ref bean="store" />
+            <ref component-id="store" />
         </jaxrs:serviceBeans>
         <jaxrs:inInterceptors>
             <bean class="org.apache.cxf.interceptor.LoggingOutInterceptor"/>
@@ -38,7 +26,7 @@
     <bean id="bookReceiver" class="service.BookReceiver">
     </bean>
 
-    <camelContext id="camelContext" xmlns="http://camel.apache.org/schema/spring" trace="true">
+    <camelContext id="camelContext" xmlns="http://camel.apache.org/schema/blueprint">
 
         <!-- This route offers the cxf endpoint using a jms queue -->
         <route>
@@ -71,7 +59,7 @@
         <property name="connectionFactory" ref="connectionFactory" />
     </bean>
 
-    <bean id="connectionFactory" class="org.apache.activemq.spring.ActiveMQConnectionFactory">
+    <bean id="connectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
         <property name="brokerURL" value="tcp://localhost:61616"/>
     </bean>
 
@@ -81,4 +69,4 @@
     <bean id="jetty" class="org.apache.camel.component.jetty9.JettyHttpComponent9">
     </bean>
 
-</beans>
+</blueprint>

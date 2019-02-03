@@ -9,11 +9,11 @@
     <repository>mvn:org.apache.karaf.features/enterprise/${karaf.version}/xml/features</repository>
     <repository>mvn:org.apache.camel.karaf/apache-camel/${camel.version}/xml/features</repository>
     <repository>mvn:org.apache.cxf.karaf/apache-cxf/${cxf.version}/xml/features</repository>
-    <repository>mvn:org.apache.activemq/activemq-karaf/${activemq.version}/xml/features</repository>
+    <repository>mvn:org.apache.activemq/activemq-karaf/${activemq.version}/xml/features-core</repository>
 
     <feature name='talend-camel-example-common' version='${project.version}' resolver='(obr)'>
         <feature version="${cxf.version}">cxf</feature>
-        <feature version="${activemq.version}">activemq</feature>
+        <feature version="${activemq.version}">activemq-client</feature>
         <feature version="${camel.version}">camel</feature>
         <feature version="${camel.version}">camel-blueprint</feature>
         <feature version="${camel.version}">camel-cxf</feature>

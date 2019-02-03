@@ -19,6 +19,9 @@
     </feature>
 
     <feature name='talend-cxf-example-jaxrs-advanced-server' version='${project.version}' resolver='(obr)'>
+        <feature>spring-orm</feature>
+        <feature>openjpa</feature>
+        <bundle>mvn:org.hsqldb/hsqldb/${hsqldb.version}</bundle>
         <bundle>mvn:org.talend.cxf-examples.jaxrs-advanced-example/jaxrs-advanced-common/${project.version}</bundle>
         <bundle>mvn:org.talend.cxf-examples.jaxrs-advanced-example/jaxrs-advanced-service-bundle/${project.version}</bundle>
     </feature>
